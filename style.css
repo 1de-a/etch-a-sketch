@@ -1,0 +1,36 @@
+h1 {
+    color: #aa3a3a;
+    text-align: center;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+
+#container {
+
+ 
+
+border: 2px solid #aa3a3a;
+height: 640px;
+width: 640px;
+padding: 10px;
+margin: auto;
+background-color: #f4f4f2;
+
+}
+
+.box {
+
+    
+    background-color: #e8e8e8;
+    
+    width: 10px;
+    height: 10px;
+  
+    float: left;
+}
+
+.box:hover {
+    
+    background-color: #495464;
+    
+}
