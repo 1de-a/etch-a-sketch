@@ -6,27 +6,73 @@
   <meta charset="UTF-8"/>
 </head>
 <body>
-  <h1>Etch-A-Sketch</h1>
 
+  <h1>Etch-A-Sketch</h1>
+  <p>Enter a number between 1-64 and enjoy!</p>
 <div id="container">
 
   
 </div>
 
+<footer>
+  <button onclick=start()>Resize</button>
+  <input type="checkbox" id="myCheck">Rainbow Mode
+</footer>
   <script>
 
 
-    for (let i=0;i<4096;i++)  {
+
+let width;
+let height;
+
+
+function start(){
+  location.reload();
+}
+
+    
+    let ask = prompt("enter new size","");
+    
+     if (ask!=null && ask>0 && ask<65)
+    {
+    width = (640/ask)+"px";
+    console.log(width);
+    height = (640/ask) +"px";
+    }
+    
+    else {start()}
+    
+    for (let i=0;i<ask*ask;i++)  {
     const container = document.querySelector("#container");
     const box = document.createElement("div");
     box.classList.add("box");
+    box.style.width= width;
+    box.style.height= height;
     
     container.appendChild(box);
     
     }
     
-   
+  
+     const boxes =document.querySelectorAll("div");
+     var x = document.getElementById("myCheck").checked;
+     console.log(x);
+     if (x == true ) {
     
+    boxes.forEach(div=>div.addEventListener("mouseover",rainbow))}
+    else 
+
+    boxes.forEach(div=>div.addEventListener("mouseover",colorChanger))
+
+
+    function colorChanger() {
+    this.style.backgroundColor= "#495464";
+  }
+    function rainbow() {
+      var randomColor = '#'+Math.floor(Math.random()*16777215).toString(16);
+    this.style.backgroundColor= randomColor;
+  }
+  
   </script>
 </body>
 </html>
